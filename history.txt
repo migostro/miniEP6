@@ -1,0 +1,8 @@
+
+sudo docker run -d -p 80:80 caddy
+
+sudo docker container stop 10924dac05d3
+sudo docker container rm 10924dac05d3
+
+sudo docker image build . -t caddy:2.5.0-alpine
+sudo docker container run --name my-caddy-server -p 8080:1025 -d caddy:2.5.0-alpine
